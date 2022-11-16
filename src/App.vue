@@ -19,21 +19,6 @@
         </div>
       </div>
     </div>
-    <div>
-
-      <ul>
-        <li>
-          <h2 class="text-center mb-3">Carlos Luis Parraga Vera</h2>
-        </li>
-        <li>
-          <h2 class="text-center mb-3">Fausto Amaguaña</h2>
-        </li>
-      </ul>
-      <h3>Automatizacion de Procesos</h3>
-      <ul class="list-group">
-        <li class="list-group-item" v-show="fulldatetime"><strong>Fecha:</strong> {{ fulldatetime }}</li>
-      </ul>
-    </div>
   </center>
 </template>
 
