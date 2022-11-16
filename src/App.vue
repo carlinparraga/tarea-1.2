@@ -2,7 +2,7 @@
   <center>
 
     <h1>Tarea 1.2 Carlos Luis Parraga Vera - Fausto Amaguaña</h1>
-    <h2>Automatizacion de Procesos</h2>
+    <h2>Automatizacion de Process</h2>
     <br>
   </center>
 
