@@ -20,20 +20,26 @@
       </div>
     </div>
     <div>
-      
+
       <ul>
-        <li><h2 class="text-center mb-3">Carlos Luis Parraga Vera</h2></li>
-        <li><h2 class="text-center mb-3">Fausto Amaguaña</h2></li>
+        <li>
+          <h2 class="text-center mb-3">Carlos Luis Parraga Vera</h2>
+        </li>
+        <li>
+          <h2 class="text-center mb-3">Fausto Amaguaña</h2>
+        </li>
       </ul>
       <h3>Automatizacion de Procesos</h3>
       <ul class="list-group">
         <li class="list-group-item" v-show="fulldatetime"><strong>Fecha:</strong> {{ fulldatetime }}</li>
       </ul>
-  </div>  
+    </div>
   </center>
 </template>
 
 <script>
+
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -50,13 +56,19 @@ export default {
       return new Date();
     }
   },
-  mounted: function () {
+  mounted() {
     this.fulldatetime = this.printFullDate();
   },
-  created() {
-    fetch("http://200.24.152.69:8095/api/room_rental/v0/room_rental/ConsultaHabitaciones")
+  async created() {
+    /* fetch("http://200.24.152.69:8095/api/room_rental/v0/room_rental/ConsultaHabitaciones")
       .then(response => response.json())
-      .then(data => (this.info = data));
+      .then(data => (this.info = data)); */
+    try {
+      await axios.get("http://200.24.152.69:8095/api/room_rental/v0/room_rental/ConsultaHabitaciones")
+        .then(response => (this.info = response.data));
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 </script>
